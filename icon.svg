@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#7fd9c4"/>
+  <!-- Egg body -->
+  <ellipse cx="256" cy="290" rx="130" ry="155" fill="#2b3622"/>
+  <!-- Screen bezel -->
+  <rect x="156" y="170" width="200" height="160" rx="18" fill="#2f5f6b"/>
+  <!-- LCD screen -->
+  <rect x="170" y="184" width="172" height="132" rx="6" fill="#c3d0a0"/>
+  <!-- Pixel pet (simplified) - body -->
+  <rect x="216" y="220" width="80" height="72" rx="4" fill="#2b3622"/>
+  <!-- Eyes -->
+  <rect x="228" y="236" width="14" height="14" rx="2" fill="#c3d0a0"/>
+  <rect x="270" y="236" width="14" height="14" rx="2" fill="#c3d0a0"/>
+  <!-- Mouth smile -->
+  <rect x="238" y="264" width="8" height="6" rx="2" fill="#c3d0a0"/>
+  <rect x="266" y="264" width="8" height="6" rx="2" fill="#c3d0a0"/>
+  <rect x="246" y="270" width="20" height="6" rx="2" fill="#c3d0a0"/>
+</svg>

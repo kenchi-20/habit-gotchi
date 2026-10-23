@@ -1,0 +1,102 @@
+:root{--page:#efe8fb;--ink:#2a1f3d;--shell:#7fd9c4;--shell-ink:#12332f;--bezel:#2f5f6b;--lcd:#c3d0a0;--lcd-ink:#2b3622;--btn:#ffc857}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#1f1830;--ink:#efe8fb}}
+:root[data-theme="dark"]{--page:#1f1830;--ink:#efe8fb}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
+  margin:0;
+  background:var(--page);
+  color:var(--ink);
+  font-family:"Pixelify Sans","Trebuchet MS",sans-serif;
+  font-size:16px;
+  /* honour notch / home-bar on iOS */
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  padding-left:env(safe-area-inset-left,0px);
+  padding-right:env(safe-area-inset-right,0px);
+  /* prevent rubber-band scroll revealing bare background */
+  overscroll-behavior:contain;
+}
+main{display:flex;flex-direction:column;align-items:center;padding:24px 12px 48px;gap:12px}
+h1{font-size:clamp(22px,7vw,30px);margin:0;font-weight:600;user-select:none}
+#age{margin:0;font-size:clamp(13px,4vw,15px);user-select:none}
+.egg{
+  width:min(340px,94vw);
+  padding:clamp(60px,22vw,92px) 0 clamp(28px,10vw,46px);
+  background:var(--shell);
+  color:var(--shell-ink);
+  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+  box-shadow:inset -10px -14px 0 rgba(0,0,0,.12),0 14px 0 rgba(0,0,0,.18);
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  touch-action:manipulation;
+}
+.bezel{background:var(--bezel);padding:14px;border-radius:18px 18px 26px 26px}
+canvas{
+  display:block;
+  /* scale canvas to fit narrower phones while staying crisp */
+  width:min(192px,54vw);
+  height:min(144px,40.5vw);
+  image-rendering:pixelated;
+  image-rendering:crisp-edges; /* Firefox */
+  background:var(--lcd);
+  border-radius:4px;
+  transition:filter .4s;
+  touch-action:none; /* prevent accidental scroll from canvas swipes */
+}
+canvas.dark{filter:brightness(.55)}
+#msg{margin:0;min-height:2.6em;width:min(240px,80vw);text-align:center;font-size:clamp(14px,4.2vw,16px);line-height:1.3;user-select:none}
+.meters{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;width:min(230px,78vw)}
+.m{display:grid;gap:3px;font-size:clamp(12px,3.8vw,14px);user-select:none}
+.bar{height:8px;background:rgba(0,0,0,.2);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--shell-ink)}
+.bar i.low{background:#b3261e}
+/* button rows — fluid width, wrap on tiny screens */
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+  width:min(340px,94vw);
+  touch-action:manipulation;
+}
+.btn{
+  flex:1 1 auto;
+  min-width:64px;   /* never so narrow you can't read it */
+  min-height:48px;  /* WCAG / Apple 44 pt touch target */
+  font:inherit;font-weight:600;font-size:clamp(13px,3.8vw,15px);
+  background:var(--btn);color:#3a2a00;border:0;border-radius:999px;
+  padding:10px 8px;
+  box-shadow:0 4px 0 rgba(0,0,0,.28);
+  cursor:pointer;
+  user-select:none;
+  -webkit-user-select:none;
+  touch-action:manipulation;
+}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.28)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn:focus-visible{outline:3px solid var(--shell-ink);outline-offset:2px}
+.menu-row{margin-top:14px}
+#cust,#dex{width:min(340px,94vw);margin-top:8px;display:grid;gap:14px}
+#dex h2{margin:0;font-size:clamp(18px,5.5vw,22px)}
+#dex-count{margin:0;font-size:14px;opacity:.85}
+.dex-list{display:grid;gap:8px}
+.dex-card{text-align:left;font:inherit;color:var(--ink);background:transparent;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;display:grid;gap:4px;cursor:default}
+.dex-card strong{font-size:15px}
+.dex-card span{font-size:13px;line-height:1.3;opacity:.9}
+.dex-card.locked{opacity:.55;border-style:dashed}
+.f{display:grid;gap:6px;font-size:clamp(13px,4vw,15px)}
+#nm{font:inherit;font-size:16px;padding:10px 12px;border:2px solid var(--ink);border-radius:8px;background:transparent;color:var(--ink);
+  /* iOS won't auto-zoom if font-size >= 16px */
+}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{
+  font:inherit;font-size:clamp(13px,3.8vw,14px);
+  color:var(--ink);background:transparent;border:2px solid var(--ink);
+  border-radius:999px;padding:6px 14px;cursor:pointer;
+  min-height:40px;
+  touch-action:manipulation;
+  user-select:none;
+}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--page)}
+.chip:focus-visible,#nm:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+[hidden]{display:none!important}

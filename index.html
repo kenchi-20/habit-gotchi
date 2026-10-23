@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#efe8fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1f1830" media="(prefers-color-scheme: dark)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="HabitGotchi">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <title>HabitGotchi</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>HabitGotchi</h1>
+  <p id="age"></p>
+  <div class="egg">
+    <div class="bezel"><canvas id="c" width="32" height="24" role="img" aria-label="Your pet"></canvas></div>
+    <p id="msg" aria-live="polite"></p>
+    <div class="meters">
+      <div class="m">Food<div class="bar"><i id="b-food"></i></div></div>
+      <div class="m">Fun<div class="bar"><i id="b-fun"></i></div></div>
+      <div class="m">Energy<div class="bar"><i id="b-energy"></i></div></div>
+      <div class="m">Health<div class="bar"><i id="b-health"></i></div></div>
+    </div>
+  </div>
+  <div class="row" id="btns">
+    <button class="btn" id="feed">Feed</button>
+    <button class="btn" id="playb">Play</button>
+    <button class="btn" id="clean">Clean</button>
+    <button class="btn" id="light">Light</button>
+  </div>
+  <div class="row" id="modes" hidden>
+    <button class="btn" id="g-look">Look</button>
+    <button class="btn" id="g-dice">Dice</button>
+    <button class="btn" id="g-react">Catch</button>
+    <button class="btn" id="g-back">Back</button>
+  </div>
+  <div class="row" id="play" hidden>
+    <button class="btn" id="gl">Left</button>
+    <button class="btn" id="gr">Right</button>
+  </div>
+  <div class="row" id="dice" hidden>
+    <button class="btn" id="dh">High (4-6)</button>
+    <button class="btn" id="dl">Low (1-3)</button>
+  </div>
+  <div class="row" id="react" hidden>
+    <button class="btn" id="catch">Catch</button>
+  </div>
+  <div class="row" id="again" hidden>
+    <button class="btn" id="newegg">Hatch a new egg</button>
+  </div>
+  <div class="row menu-row">
+    <button class="btn" id="cust-btn" aria-expanded="false">Customize</button>
+    <button class="btn" id="dex-btn" aria-expanded="false">Petdex</button>
+  </div>
+  <section id="cust" hidden>
+    <label class="f">Pet name <input id="nm" maxlength="12" autocomplete="off"></label>
+    <div class="f">Breed<div class="chips" id="c-breed"></div></div>
+    <div class="f">Accessory<div class="chips" id="c-acc"></div></div>
+    <div class="f">Device color<div class="chips" id="c-shell"></div></div>
+    <div class="f">Screen tint<div class="chips" id="c-lcd"></div></div>
+  </section>
+  <section id="dex" hidden>
+    <h2>Petdex</h2>
+    <p id="dex-count"></p>
+    <div id="dex-list" class="dex-list"></div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
