@@ -1,6 +1,6 @@
 # HabitGotchi
 
-A browser-based virtual pet — care for an egg through adulthood, unlock forms in the Petdex, and play short mini-games. Built with plain HTML, CSS, and JavaScript (no build step).
+A browser-based virtual petcare for an egg through adulthood, unlock forms in the Petdex, and play short mini-games. Built with plain HTML, CSS, and JavaScript (no build step).
 
 ## Features
 
@@ -19,10 +19,10 @@ A browser-based virtual pet — care for an egg through adulthood, unlock forms 
 1. Wait for the egg to hatch, then keep the four meters healthy
 2. Clean messes; use **Light** when the pet needs sleep
 3. Open **Play** and pick Look, Dice, or Catch for bonus Fun
-4. Raise the pet through childhood — better care unlocks rarer adult forms
+4. Raise the pet through childhood better care unlocks rarer adult forms
 5. Open **Petdex** to see which forms you’ve discovered
 6. Use **Customize** for name, look, and device styling
-7. If the pet passes away, hatch a new egg and try again
+7. If the pet passes away hatch a new egg and try again
 
 ## Run locally
 
@@ -49,14 +49,6 @@ Everything is stored **per browser / device** in `localStorage`. There is no acc
 | `pocketpet-dex` | Unlocked adult form IDs for the Petdex |
 
 Clearing site data, switching browsers, or using another device starts fresh.
-
-## Deploy
-
-Static hosting only — upload the project root (`index.html` at the top level).
-
-- **Netlify Drop** — drag the `HabitGotchi` folder to [app.netlify.com/drop](https://app.netlify.com/drop)
-- **GitHub Pages** — push these files to a repo, then enable Pages from the `main` branch / root
-- **Vercel / Cloudflare Pages** — connect the repo or upload; framework = none / static
 
 ## Files
 
